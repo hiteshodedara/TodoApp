@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="title text-center pt-3 ">
+      <h1>Todo App</h1>
+    </div>
+    <app-todoadd></app-todoadd>
+  </div>
+  
+  <div class="container-fluid  text-center">
+      <div class="row">
+        <div class="col mt-3 mb-2  " *ngFor="let item of blocks">
+            <app-todoitems [curruntlist]="item"></app-todoitems>
+        </div>
+      </div>
+  </div>

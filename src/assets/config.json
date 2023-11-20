@@ -1,0 +1,17 @@
+[
+    {
+        "key":"todo",
+        "name": "Todo",
+        "index": 1
+    },
+    {
+        "key":"prosess",
+        "name": "Prosess",
+        "index": 2
+    },
+    {
+        "key":"complete",
+        "name": "Complete",
+        "index": 3  
+    }
+]
