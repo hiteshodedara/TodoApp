@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Todo } from 'src/app/models/todo';
+import { LocaldataService } from 'src/app/services/localdata.service';
 import { UIdataService } from 'src/app/services/uidata.service';
 
 @Component({
@@ -9,12 +11,15 @@ import { UIdataService } from 'src/app/services/uidata.service';
 export class TodosComponent {
   blocks!: any[];
 
-  constructor(private uiService:UIdataService ) {
+  constructor(private uiService:UIdataService,private dbdata:LocaldataService ) {
     uiService.TodoListUI().subscribe((data) => {
       data.sort((a, b) => a.index - b.index)
       this.blocks = data.map(res => res)
-    })
+    })    
+  }
 
-    
+  addtodo(item:Todo){
+    this.dbdata.addTodo(item)
+    window.location.reload();
   }
 }

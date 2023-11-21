@@ -1,10 +1,51 @@
-<div class="card">
-    <div class="card-title mt-3"> <h1>{{curruntlist.name}}</h1> </div>
-
-    <div class="card-body">
-        <div class="card items d-flex flex-row justify-content-between p-3" >
-            <h3 class="">items</h3>
-            <button class="btn btn-danger ">remove</button>
+    <div class="card d-flex  flex-row justify-content-between bg-dark-subtle overflow-hidden ">
+        <div class=" text-center d-flex align-content-center  mt-4 mx-2" >
+            <p class="fw-bolder ">{{items.value}}</p>
+        </div>
+        <div class="op  d-flex mt-2 ">
+            <div class="form mx-1 mt-2">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="onupdatetodoclick(items.id)">Update</button>
+            </div>
+            <div class="btn mt-2" (click)="ondelete(items.id)">
+                <a class=" text-danger text-decoration-none deletebtn" >X</a>
+            </div>
         </div>
     </div>
-</div>
+
+<!-- Modal code -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Update Todo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 d-flex ">
+              <label for="recipient-name" class="col-form-label">Value:</label>
+              <input type="text" class="form-control" name="value" id="recipient-name" [(ngModel)]="ans2">
+            </div>
+            <div class="mb-3 d-flex ">
+              <label for="recipient-name" class="col-form-label">Update List:</label>
+                <select class="form-select w-25 " >
+                    <option *ngFor="let item2 of oplist" [value]="item2.key">{{item2.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3 d-flex ">
+              <label for="recipient-name" class="col-form-label">Assigned User:</label>
+                <select class="form-select w-25 " >
+                    <option *ngFor="let item2 of userlist" [value]="item2.name">{{item2.name}}</option>
+                </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
