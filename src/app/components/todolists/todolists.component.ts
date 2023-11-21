@@ -15,26 +15,31 @@ export class TodolistsComponent implements OnInit {
 
   constructor(private dbdata: LocaldataService) {
   }
-  
+
   ngOnInit() {
     this.getalltodos();
-    this.currunttodos= this.getcurrunttodolist();
+    this.getcurrunttodolist().subscribe(res=>{
+      this.currunttodos = res;
+    });
   }
 
+  //use for get all todos 
   getalltodos() {
     this.dbdata.getTodos().subscribe(res => {
       this.totaltodos = res
     });
   }
 
-  getcurrunttodolist() {
-    return this.totaltodos.filter((item: { key: string }) => item.key === this.curruntlist.key);
+  //use for get specific list of todos
+  getcurrunttodolist():Observable<Todo[]> {
+    return of(this.totaltodos.filter((item: { key: string }) => item.key === this.curruntlist.key));
   }
 
+  //main delete function for delete todo item and update todos
   deleletodo(id: number) {
     this.dbdata.deleteTodo(id);
     this.ngOnInit()
   }
 
-  
+
 }

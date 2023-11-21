@@ -11,14 +11,15 @@ import { UIdataService } from 'src/app/services/uidata.service';
 export class TodosComponent {
   blocks!: any[];
 
-  constructor(private uiService:UIdataService,private dbdata:LocaldataService ) {
+  constructor(private uiService: UIdataService, private dbdata: LocaldataService) {
     uiService.TodoListUI().subscribe((data) => {
       data.sort((a, b) => a.index - b.index)
       this.blocks = data.map(res => res)
-    })    
+    })
   }
 
-  addtodo(item:Todo){
+  //to add a todo item in todolist 
+  addtodo(item: Todo) {
     this.dbdata.addTodo(item)
     window.location.reload();
   }

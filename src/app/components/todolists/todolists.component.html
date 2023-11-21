@@ -1,7 +1,10 @@
 <div class="card bg-secondary-subtle">
-    <div class="card-title mt-3"> <h1>{{curruntlist.name}}</h1> </div>
+    <div class="card-title mt-3">
+        <h1>{{curruntlist.name}}</h1>
+    </div>
 
     <div class="card-body" *ngFor="let item of currunttodos">
-           <app-todoitems [curruntlist]="curruntlist" [items]="item" (tododelete)="deleletodo($event)"></app-todoitems>
+        <app-todoitems [curruntlist]="curruntlist" [items]="item" (tododelete)="deleletodo($event)">
+        </app-todoitems>
     </div>
 </div>
