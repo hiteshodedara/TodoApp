@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Todo } from 'src/app/models/todo';
 import { User } from 'src/app/models/user';
 import { LocaldataService } from 'src/app/services/localdata.service';
 import { UIdataService } from 'src/app/services/uidata.service';
 import { UsersService } from 'src/app/services/users.service';
+
 
 @Component({
   selector: 'app-todoitems',
@@ -16,8 +16,9 @@ export class TodoitemsComponent implements OnInit {
   @Input() curruntlist: any;
   @Input() items: any;
   @Output() tododelete: EventEmitter<number> = new EventEmitter();
-
   
+  
+  updateitemvalue:any;
   oplist!: any[];
   userlist!: User[];
   selectedvalue!: string;
@@ -46,24 +47,13 @@ export class TodoitemsComponent implements OnInit {
   this.tododelete.emit(id)
   }
 
-  ans2!:string;
   onupdate(id:number) {
     this.dbdata.updateTodoKey(id, this.selectedvalue);
     window.location.reload();
   }
 
-   onupdatetodoclick(id:any){
-    this.dbdata.getoneTOdo(id).subscribe(
-      (ans: any) => {
-        this.ans2 = ans.value;
-        console.log(this.ans2);
-        
-        
-      }
-    );
-    
-    
-    
+   onupdatetodoclick(value:any){
+    this.updateitemvalue=value.value;
   }
 
 }

@@ -5,7 +5,7 @@
         <div class="op  d-flex mt-2 ">
             <div class="form mx-1 mt-2">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
-                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="onupdatetodoclick(items.id)">Update</button>
+                data-bs-target="#exampleModal" data-bs-whatever="@mdo" (click)="onupdatetodoclick(items)">Update</button>
             </div>
             <div class="btn mt-2" (click)="ondelete(items.id)">
                 <a class=" text-danger text-decoration-none deletebtn" >X</a>
@@ -26,7 +26,7 @@
           <form>
             <div class="mb-3 d-flex ">
               <label for="recipient-name" class="col-form-label">Value:</label>
-              <input type="text" class="form-control" name="value" id="recipient-name" [(ngModel)]="ans2">
+              <input type="text" class="form-control" name="value" id="recipient-name" [(ngModel)]="updateitemvalue">
             </div>
             <div class="mb-3 d-flex ">
               <label for="recipient-name" class="col-form-label">Update List:</label>
