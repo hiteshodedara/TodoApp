@@ -10,6 +10,11 @@ import { TodosComponent } from './components/todos/todos.component';
 import { TodoitemsComponent } from './components/todoitems/todoitems.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodolistsComponent } from './components/todolists/todolists.component';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UpdateTodoServiceComponent } from './components/update-todo-service/update-todo-service.component';
+
 
 @NgModule({
   declarations: [
@@ -17,15 +22,19 @@ import { TodolistsComponent } from './components/todolists/todolists.component';
     TodoaddComponent,
     TodosComponent,
     TodoitemsComponent,
-    TodolistsComponent
+    TodolistsComponent,
+    UpdateTodoServiceComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DynamicDialogModule,
+    DialogModule
 
   ],
   providers: [],

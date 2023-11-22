@@ -1,30 +1,35 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Todo } from 'src/app/models/todo';
 import { User } from 'src/app/models/user';
 import { LocaldataService } from 'src/app/services/localdata.service';
 import { UIdataService } from 'src/app/services/uidata.service';
 import { UsersService } from 'src/app/services/users.service';
-
+import { UpdateTodoServiceComponent } from '../update-todo-service/update-todo-service.component';
 
 @Component({
   selector: 'app-todoitems',
   templateUrl: './todoitems.component.html',
-  styleUrls: ['./todoitems.component.css']
+  styleUrls: ['./todoitems.component.css'],
+  providers: [DialogService]
 })
 export class TodoitemsComponent implements OnInit {
 
   @Input() curruntlist: any;
-  @Input() items: any;
+
+  @Input() items!: Todo;
+
   @Output() tododelete: EventEmitter<number> = new EventEmitter();
 
+  ref: DynamicDialogRef | undefined;//ref data for dynamicdialog
 
   oplist: any[] | undefined;
   selectedvalue!: string;//For Selected Item list Option Name or Key
 
-  constructor(private uiService: UIdataService, private dbdata: LocaldataService, private userdata: UsersService) {
-    uiService.TodoListUI().subscribe(res => {
-      this.oplist = res
-    })
+
+
+  constructor(private dbdata: LocaldataService, public dialogService: DialogService) {
+
   }
 
   ngOnInit() {
@@ -33,7 +38,7 @@ export class TodoitemsComponent implements OnInit {
   }
 
   //for Delete items in list
-  ondelete(id: any) {
+  ondelete(id: number) {
     this.tododelete.emit(id)
   }
 
@@ -43,6 +48,20 @@ export class TodoitemsComponent implements OnInit {
     window.location.reload();
   }
 
+  //for sent data to update component
+  Updatetodo(item: Todo) {
+    this.ref = this.dialogService.open(UpdateTodoServiceComponent, {
+      header: 'Update Todo',
+      width: '50%',
+      contentStyle: { "overflow": "auto" },
+      baseZIndex: 10000,
+      maximizable: true,
+      data: {
+        values: item,
+
+      }
+    });
+  }
 
 
 }

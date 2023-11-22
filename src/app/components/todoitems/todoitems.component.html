@@ -3,13 +3,12 @@
     <!-- TodoItems Value is here -->
     <p class="fw-bolder ">{{items.value}}</p>
   </div>
-  <div class="op  d-flex mt-2 ">
+  <div class="op  d-flex mt-1 ">
     <!-- Update Button Here -->
-    <div class="form mx-1 mt-2">
-      <select class="form-select " [(ngModel)]="selectedvalue" (ngModelChange)="onupdate(items.id)">
-          <option *ngFor="let item2 of oplist" [value]="item2.key">{{item2.name}}</option>
-      </select>
-  </div>
+    
+    <div class="btn mt-1">
+      <button class="btn btn-primary " (click)="Updatetodo(items)">Update</button>
+    </div>
 
     <!-- Delete Button Here -->
     <div class="btn mt-2" (click)="ondelete(items.id)">
