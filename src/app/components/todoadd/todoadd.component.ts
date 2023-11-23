@@ -25,8 +25,7 @@ export class TodoaddComponent {
 
       const currentDate: Date = new Date();
 
-      // If you only want the date without the time, you can use the toDateString() method
-      const currentDateOnly: string = currentDate.toDateString();
+  
 
       let obj: Todo = {
         id: Math.round(Math.random() * 2000),
@@ -35,8 +34,8 @@ export class TodoaddComponent {
         todocreater: {
           uid: 1,
           username: 'Hitesh',
-          sdate: currentDateOnly,
-          edate: currentDateOnly
+          sdate: currentDate,
+          edate: currentDate
         }
       }
 

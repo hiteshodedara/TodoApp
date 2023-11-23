@@ -1,4 +1,4 @@
-<div class="card d-flex  flex-row justify-content-between  bg-dark-subtle overflow-hidden ">
+<div class="card d-flex  flex-row justify-content-between  bg-success-subtle  overflow-hidden ">
 
   <!-- TodoItems Value is here -->
   <div class=" text d-flex ">
@@ -15,11 +15,12 @@
     </div>
 
     <!-- Delete Button Here -->
-    <div class="mx-3 align-self-center" >
-      <p-toast></p-toast>
-      <p-confirmPopup></p-confirmPopup> 
-      <i class="pi pi-times fbtn text-danger fs-6 fbtn" (click)="ondelete(items.id,$event)" ></i>
-    </div>
+<div class="mx-3 align-self-center">
+  <p-toast></p-toast>
+  <p-confirmPopup class="confirmPopup" [style]="confirmPopupStyles"></p-confirmPopup>
+  <i class="pi pi-times fbtn text-danger fs-6 fbtn" (click)="showConfirmationDialog(items.id,$event)"></i>
+</div>
+
 
   </div>
 </div>

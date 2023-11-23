@@ -1,10 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Todo } from 'src/app/models/todo';
-import { User } from 'src/app/models/user';
 import { LocaldataService } from 'src/app/services/localdata.service';
-import { UIdataService } from 'src/app/services/uidata.service';
-import { UsersService } from 'src/app/services/users.service';
 import { UpdateTodoServiceComponent } from '../update-todo-service/update-todo-service.component';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
@@ -39,30 +36,43 @@ export class TodoitemsComponent implements OnInit {
 
   }
 
+  confirmPopupStyles: { [klass: string]: any } = {
+    'background-color': '#76db9b',
+    'color': '#000'  
+  }
+
+ 
+
   //for Delete items in list
-  ondelete(id: number,event: Event) {
+  showConfirmationDialog(id: number,event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
       message: 'Are you sure that you want to Delete?',
-      icon: 'pi pi-exclamation-triangle',
+      icon: 'pi pi-trash',
+      acceptLabel: 'Yes',
+      rejectLabel: 'No',
+      acceptButtonStyleClass: 'p-button-success', // the custom class for the accept button
+      rejectButtonStyleClass: 'p-button-danger', // the custom class for the reject button
       accept: async () => {
-         this.messageService.add( { severity: 'info', summary: 'Todo ', detail: 'Deleted' });
+         this.messageService.add( { severity: 'success', summary: 'Todo ', detail: 'Deleted' });
          setTimeout(() => {
           this.emitedeletedata(id)
          }, 1200);
         },
         reject: () => {
           this.messageService.add({ severity: 'error', summary: 'Todo ', detail: 'Not Deleted' });
-        }
+        },
+       
       });
       
     }
     
-    
     emitedeletedata(id:number){
     this.tododelete.emit(id)
-
   }
+
+
+
 
   // for Update item list name
   onupdate(id: number) {
@@ -75,13 +85,14 @@ export class TodoitemsComponent implements OnInit {
     this.ref = this.dialogService.open(UpdateTodoServiceComponent, {
       header: 'Update Todo',
       width: '50%',
-      contentStyle: { "overflow": "auto" },
+      contentStyle: {'background-color': '#76db9b', 'color': 'black','overflow':'hidden'},
       baseZIndex: 10000,
-      maximizable: true,
+      maximizable: false,
+      draggable:true,
+      position:'center',
       data: {
-        values: item,
-
-      }
+        values: item,     
+      },
     });
   }
 
