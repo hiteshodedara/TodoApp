@@ -8,11 +8,13 @@ import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 })
 export class UpdateTodoServiceComponent implements OnInit {
 
-  Tvalue!:string;
+  Tvalue!:string;//todoitem value(text)
 
   constructor(public config: DynamicDialogConfig) {
 
-    console.log (this.Tvalue=this.config.data.values);
+    this.Tvalue=this.config.data.values.value
+    console.log(this.Tvalue);
+
   }
 
 

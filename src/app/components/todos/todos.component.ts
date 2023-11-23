@@ -33,8 +33,7 @@ export class TodosComponent implements OnInit{
 
   //to add a todo item in todolist 
   addtodo(item: Todo) {
-    this.dbdata.addTodo(item)
-    window.location.reload();
+    
   }
 
 
