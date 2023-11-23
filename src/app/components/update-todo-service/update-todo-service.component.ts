@@ -12,7 +12,7 @@ export class UpdateTodoServiceComponent implements OnInit {
 
   constructor(public config: DynamicDialogConfig) {
 
-    this.Tvalue=this.config.data.values.value
+    this.Tvalue=this.config.data.values.title
     console.log(this.Tvalue);
 
   }

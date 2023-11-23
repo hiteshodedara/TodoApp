@@ -31,7 +31,7 @@ export class TodoaddComponent {
       let obj: Todo = {
         id: Math.round(Math.random() * 2000),
         key: 'todo',
-        value: this.inputdata,
+        title: this.inputdata,
         todocreater: {
           uid: 1,
           username: 'Hitesh',

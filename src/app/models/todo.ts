@@ -1,6 +1,6 @@
 export interface Todo {
     key:string
-    value:string
+    title:string
     id:number
     assigneduser?:{
         userid:number;

@@ -14,6 +14,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateTodoServiceComponent } from './components/update-todo-service/update-todo-service.component';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { UpdateTodoServiceComponent } from './components/update-todo-service/upd
     FormsModule,
     ReactiveFormsModule,
     DynamicDialogModule,
-    DialogModule
+    DialogModule,
+    ConfirmPopupModule,
+    ToastModule
 
   ],
   providers: [],

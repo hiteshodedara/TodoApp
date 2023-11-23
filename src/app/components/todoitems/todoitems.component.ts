@@ -6,12 +6,13 @@ import { LocaldataService } from 'src/app/services/localdata.service';
 import { UIdataService } from 'src/app/services/uidata.service';
 import { UsersService } from 'src/app/services/users.service';
 import { UpdateTodoServiceComponent } from '../update-todo-service/update-todo-service.component';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-todoitems',
   templateUrl: './todoitems.component.html',
   styleUrls: ['./todoitems.component.css'],
-  providers: [DialogService]
+  providers: [DialogService,ConfirmationService, MessageService]
 })
 export class TodoitemsComponent implements OnInit {
 
@@ -28,7 +29,8 @@ export class TodoitemsComponent implements OnInit {
 
 
 
-  constructor(private dbdata: LocaldataService, public dialogService: DialogService) {
+  constructor(private dbdata: LocaldataService, public dialogService: DialogService, 
+    private confirmationService: ConfirmationService, private messageService: MessageService) {
 
   }
 
@@ -38,8 +40,28 @@ export class TodoitemsComponent implements OnInit {
   }
 
   //for Delete items in list
-  ondelete(id: number) {
+  ondelete(id: number,event: Event) {
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      message: 'Are you sure that you want to Delete?',
+      icon: 'pi pi-exclamation-triangle',
+      accept: async () => {
+         this.messageService.add( { severity: 'info', summary: 'Todo ', detail: 'Deleted' });
+         setTimeout(() => {
+          this.emitedeletedata(id)
+         }, 1200);
+        },
+        reject: () => {
+          this.messageService.add({ severity: 'error', summary: 'Todo ', detail: 'Not Deleted' });
+        }
+      });
+      
+    }
+    
+    
+    emitedeletedata(id:number){
     this.tododelete.emit(id)
+
   }
 
   // for Update item list name

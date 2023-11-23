@@ -1,19 +1,26 @@
-<div class="card d-flex  flex-row justify-content-between bg-dark-subtle overflow-hidden ">
-  <div class=" text-center d-flex align-content-center  mt-4 mx-2">
-    <!-- TodoItems Value is here -->
-    <p class="fw-bolder ">{{items.value}}</p>
+<div class="card d-flex  flex-row justify-content-between  bg-dark-subtle overflow-hidden ">
+
+  <!-- TodoItems Value is here -->
+  <div class=" text d-flex ">
+    <div class=" align-self-center  ">
+      <p class="mt-3 mx-2 fw-bold ">{{items.title}}</p>
+    </div>
   </div>
-  <div class="op  d-flex mt-1 ">
+
+  <div class="Functions  d-flex ">
+
     <!-- Update Button Here -->
-    
-    <div class="btn mt-1">
-      <button class="btn btn-primary " (click)="Updatetodo(items)">Update</button>
+    <div class=" align-self-center">
+      <i class="pi pi-spin pi-cog text-info-emphasis fs-5 fbtn" (click)="Updatetodo(items)" ></i>
     </div>
 
     <!-- Delete Button Here -->
-    <div class="btn mt-2" (click)="ondelete(items.id)">
-      <a class=" text-danger text-decoration-none deletebtn">X</a>
+    <div class="mx-3 align-self-center" >
+      <p-toast></p-toast>
+      <p-confirmPopup></p-confirmPopup> 
+      <i class="pi pi-times fbtn text-danger fs-6 fbtn" (click)="ondelete(items.id,$event)" ></i>
     </div>
+
   </div>
 </div>
 
