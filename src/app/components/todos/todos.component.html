@@ -1,22 +1,18 @@
-<div class="container-fluid  bg-primary-subtle     pb-3  ">
+<div class="container-fluid  bg-primary-subtle   ">
 
   <div class="title text-center py-4 ">
-    <h1 class="fs-1 ">Todo App</h1>
+    <h1 class="fs-1 fw-bolder  ">Todo App</h1>
   </div>
  <!-- <app-todoadd></app-todoadd> -->
   <div class="container-fluid      text-center   ">
 
-    <div class=" align-self-center">
-      <i class="pi pi-spin pi-cog text-info-emphasis fs-5 fbtn" (click)="Updatetodo()" ></i>
-    </div>
 
-    <div class="row bg-primary-subtle    rounded-3  ">
-      <div class="col mt-3 mb-4  " *ngFor="let item of blocks">
+    <div class="row  bg-primary-subtle    rounded-3  ">
+      <div  class="col my-2   animation-duration-1000" *ngFor="let item of blocks" >
         <app-todolists [curruntlist]="item"></app-todolists>
       </div>
     </div>
   </div>
 </div>
-
 
 

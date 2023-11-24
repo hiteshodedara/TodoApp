@@ -7,21 +7,20 @@
     </div>
   </div>
 
-  <div class="Functions  d-flex ">
+  <div class="Functions mx-1   d-flex gap-1  ">
 
     <!-- Update Button Here -->
     <div class=" align-self-center">
-      <i class="pi pi-spin pi-cog text-info-emphasis fs-5 fbtn" (click)="Updatetodo(items)" ></i>
+      <i class="fa fa-edit fw-bolder  text-light-emphasis  mt-1   fs-4 fbtn" (click)="Updatetodo(items)"></i>
     </div>
 
     <!-- Delete Button Here -->
-<div class="mx-3 align-self-center">
-  <p-toast></p-toast>
-  <p-confirmPopup class="confirmPopup" [style]="confirmPopupStyles"></p-confirmPopup>
-  <i class="pi pi-times fbtn text-danger fs-6 fbtn" (click)="showConfirmationDialog(items.id,$event)"></i>
-</div>
+    <p-toast></p-toast>
+    <p-confirmPopup class="confirmPopup" [style]="confirmPopupStyles"></p-confirmPopup>
+    <div class=" align-self-center">
+      <i class="fa fa-trash   text-danger fs-4 fbtn" (click)="showConfirmationDialog(items.id,$event)"></i>
+    </div>
 
 
   </div>
 </div>
-

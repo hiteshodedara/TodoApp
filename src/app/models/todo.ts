@@ -1,6 +1,7 @@
 export interface Todo {
     key:string
     title:string
+    discription:string
     id:number
     assigneduser?:[{
         userid:number;

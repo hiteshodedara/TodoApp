@@ -57,7 +57,7 @@ export class TodoitemsComponent implements OnInit {
          this.messageService.add( { severity: 'success', summary: 'Todo ', detail: 'Deleted' });
          setTimeout(() => {
           this.emitedeletedata(id)
-         }, 1200);
+         }, 1000);
         },
         reject: () => {
           this.messageService.add({ severity: 'error', summary: 'Todo ', detail: 'Not Deleted' });
@@ -71,15 +71,6 @@ export class TodoitemsComponent implements OnInit {
     this.tododelete.emit(id)
   }
 
-
-
-
-  // for Update item list name
-  onupdate(id: number) {
-    this.dbdata.updateTodoKey(id, this.selectedvalue);
-    window.location.reload();
-  }
-
   //for sent data to update component
   Updatetodo(item: Todo) {
     this.ref = this.dialogService.open(UpdateTodoServiceComponent, {
@@ -91,7 +82,8 @@ export class TodoitemsComponent implements OnInit {
       draggable:true,
       position:'center',
       data: {
-        values: item,     
+        todovalues: item, 
+        cfromupdate:this.curruntlist    
       },
     });
   }

@@ -36,12 +36,14 @@ export class LocaldataService {
     this.setTodosToLocalStorage(todos);
   }
 
-  updateTodoKey(id: number, newKey: string) {
+  updateTodoKey(id: number, newKey: string,title:string,disc:string) {
     const todos = this.getTodosFromLocalStorage();
     const index = todos.findIndex((todo: { id: number; }) => todo.id === id);
 
     if (index !== -1) {
       todos[index].key = newKey;
+      todos[index].title=title
+      todos[index].discription=disc
       this.setTodosToLocalStorage(todos);
     }
 

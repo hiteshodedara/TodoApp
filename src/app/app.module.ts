@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TodoaddComponent } from './components/todoadd/todoadd.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoitemsComponent } from './components/todoitems/todoitems.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,12 +15,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateTodoServiceComponent } from './components/update-todo-service/update-todo-service.component';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
-
+import { DropdownModule } from 'primeng/dropdown';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoaddComponent,
     TodosComponent,
     TodoitemsComponent,
     TodolistsComponent,
@@ -38,7 +37,9 @@ import { ToastModule } from 'primeng/toast';
     DynamicDialogModule,
     DialogModule,
     ConfirmPopupModule,
-    ToastModule
+    ToastModule,
+    DropdownModule,
+    MultiSelectModule
 
   ],
   providers: [],
