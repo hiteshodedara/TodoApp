@@ -16,14 +16,15 @@
 
     <div class="mb-3 d-flex gap-1" *ngIf="isAddMode==false">
       <label for="exampleInputPassword1" class="form-label  fw-bold align-self-center ">List Name:</label>
-      <select class="form-select w-25  "  name="listname" [(ngModel)]="selectedlistname.key">
+      <select class="form-select w-25  " name="listname" [(ngModel)]="selectedlistname.key">
         <option *ngFor="let item2 of lists" [value]="item2.key">{{item2.name}}</option>
       </select>
     </div>
 
     <div class="mb-3 d-flex gap-1" *ngIf="isAddMode==true">
       <label for="listdata" class="form-label fw-bold align-self-center ">Card Name:</label>
-      <input type="text" class="form-control w-25 " [disabled]="isAddMode==true"  name="listdata" [value]="selectedlistname" id="listdata">
+      <input type="text" class="form-control w-25 " [disabled]="isAddMode==true" name="listdata"
+        [value]="selectedlistname" id="listdata">
     </div>
 
     <div class="text-end">

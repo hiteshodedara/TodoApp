@@ -3,19 +3,21 @@ import { Observable, of } from 'rxjs';
 import { Todo } from 'src/app/models/todo';
 import { LocaldataService } from 'src/app/services/localdata.service';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { UpdateTodoServiceComponent } from '../update-todo-service/update-todo-service.component';
+import { PopupModelComponent } from '../popup-model/popup-model.component';
 
 
 @Component({
   selector: 'app-todolists',
   templateUrl: './todolists.component.html',
-  styleUrls: ['./todolists.component.css'],
-  providers:[DialogService]
+  styleUrls: ['./todolists.component.sass'],
+  providers: [DialogService]
 })
 export class TodolistsComponent implements OnInit {
-  @Input() curruntlist: any
-  totaltodos!: Todo[];
-  currunttodos!: Todo[];
+  @Input() curruntlist: any//currunt list data come from todos 
+
+  totaltodos!: Todo[];//total todoitems
+
+  currunttodos!: Todo[];//currunt list total todositems
 
   ref: DynamicDialogRef | undefined;//ref data for dynamicdialog
 
@@ -23,9 +25,10 @@ export class TodolistsComponent implements OnInit {
   constructor(private dbdata: LocaldataService, public dialogService: DialogService) {
   }
 
+
   ngOnInit() {
     this.getalltodos();
-    this.getcurrunttodolist().subscribe(res=>{
+    this.getcurrunttodolist().subscribe(res => {
       this.currunttodos = res;
     });
   }
@@ -38,7 +41,7 @@ export class TodolistsComponent implements OnInit {
   }
 
   //use for get specific list of todos
-  getcurrunttodolist():Observable<Todo[]> {
+  getcurrunttodolist(): Observable<Todo[]> {
     return of(this.totaltodos.filter((item: { key: string }) => item.key === this.curruntlist.key));
   }
 
@@ -48,18 +51,18 @@ export class TodolistsComponent implements OnInit {
     this.ngOnInit()
   }
 
-
-  Addtodo(clist:any) {
-    this.ref = this.dialogService.open(UpdateTodoServiceComponent, {
+  //call add popup model for add todo
+  Addtodo(clist: any) {
+    this.ref = this.dialogService.open(PopupModelComponent, {
       header: 'Add Card',
       width: '50%',
-      contentStyle: {'background-color': '#76db9b', 'color': 'black','overflow':'hidden'},
+      contentStyle: { 'background-color': '#76db9b', 'color': 'black', 'overflow': 'hidden' },
       baseZIndex: 10000,
       maximizable: false,
-      draggable:true,
-      position:'center',
+      draggable: true,
+      position: 'center',
       data: {
-        curruntlist: clist,     
+        curruntlist: clist,//data of currunt todolist for is name and key
       },
     });
   }

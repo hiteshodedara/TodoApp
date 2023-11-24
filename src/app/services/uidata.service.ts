@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class UIdataService {
 
-  private configUrl = 'assets/config.json'; 
+  private configUrl = 'assets/config.json';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  TodoListUI():Observable<any[]> {
+  TodoListUI(): Observable<any[]> {
     return this.http.get<any[]>(this.configUrl);
   }
 }

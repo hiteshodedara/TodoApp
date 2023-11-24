@@ -9,9 +9,9 @@ export class LocaldataService {
 
   private storageKey = 'TodoDB';
 
-  constructor() {}
+  constructor() { }
 
-  private getTodosFromLocalStorage(){
+  private getTodosFromLocalStorage() {
     const todosString = localStorage.getItem(this.storageKey);
     return todosString ? JSON.parse(todosString) : [];
   }
@@ -20,7 +20,7 @@ export class LocaldataService {
     localStorage.setItem(this.storageKey, JSON.stringify(todos));
   }
 
-   getTodos(): Observable<Todo[]>{
+  getTodos(): Observable<Todo[]> {
     return of(this.getTodosFromLocalStorage());
   }
 
@@ -28,7 +28,7 @@ export class LocaldataService {
     const todos = this.getTodosFromLocalStorage();
     const todo = todos.find((t: Todo) => t.id === id);
     return of(todo)
-    }
+  }
 
   addTodo(todo: Todo) {
     const todos = this.getTodosFromLocalStorage();
@@ -36,14 +36,14 @@ export class LocaldataService {
     this.setTodosToLocalStorage(todos);
   }
 
-  updateTodoKey(id: number, newKey: string,title:string,disc:string) {
+  updateTodoKey(id: number, newKey: string, title: string, disc: string) {
     const todos = this.getTodosFromLocalStorage();
     const index = todos.findIndex((todo: { id: number; }) => todo.id === id);
 
     if (index !== -1) {
       todos[index].key = newKey;
-      todos[index].title=title
-      todos[index].discription=disc
+      todos[index].title = title
+      todos[index].discription = disc
       this.setTodosToLocalStorage(todos);
     }
 

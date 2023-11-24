@@ -12,11 +12,11 @@ import { TodolistsComponent } from './components/todolists/todolists.component';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UpdateTodoServiceComponent } from './components/update-todo-service/update-todo-service.component';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { PopupModelComponent } from './components/popup-model/popup-model.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
     TodosComponent,
     TodoitemsComponent,
     TodolistsComponent,
-    UpdateTodoServiceComponent,
+    PopupModelComponent,
   ],
   imports: [
     BrowserModule,

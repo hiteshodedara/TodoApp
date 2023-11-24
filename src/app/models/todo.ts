@@ -1,16 +1,16 @@
 export interface Todo {
-    key:string
-    title:string
-    discription:string
-    id:number
-    assigneduser?:[{
-        userid:number;
-        username:string;
+    key: string
+    title: string
+    discription: string
+    id: number
+    assigneduser?: [{
+        userid: number;
+        username: string;
     }]
-    todocreater:{
-        uid:number;
-        username:string;
-        sdate:any;
-        edate:any;
+    todocreater: {
+        uid: number;
+        username: string;
+        sdate: any;
+        edate: any;
     }
 }

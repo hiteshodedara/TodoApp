@@ -15,7 +15,7 @@ export class UsersService {
     this.users.push({ id: 2, name: 'Dipen' });
     this.users.push({ id: 3, name: 'Hardik' });
     this.users.push({ id: 4, name: 'Sager' });
-    
+
   }
 
   getUsers(): Observable<User[]> {
