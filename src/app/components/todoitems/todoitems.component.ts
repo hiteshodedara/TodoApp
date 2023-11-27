@@ -54,13 +54,16 @@ export class TodoitemsComponent implements OnInit {
       acceptButtonStyleClass: 'p-button-success', // the custom class for the accept button
       rejectButtonStyleClass: 'p-button-danger', // the custom class for the reject button
       accept: async () => {
-        this.messageService.add({ severity: 'success', summary: 'Todo ', detail: 'Deleted' });
+        this.messageService.add({ severity: 'success', summary: 'Todo ', detail: 'Deleted' });//toast for accept
+        console.log("is ok");
+        
         setTimeout(() => {
           this.emitedeletedata(id)
         }, 1000);
       },
       reject: () => {
-        this.messageService.add({ severity: 'error', summary: 'Todo ', detail: 'Not Deleted' });
+        this.messageService.add({ severity: 'error', summary: 'Todo ', detail: 'Not Deleted' });//toast for reject
+        console.log("is no");
       },
 
     });
@@ -70,6 +73,8 @@ export class TodoitemsComponent implements OnInit {
   emitedeletedata(id: number) {
     this.tododelete.emit(id)
   }
+
+
 
 
   //for sent to popup-model for update todoitem

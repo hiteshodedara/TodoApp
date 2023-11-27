@@ -13,10 +13,12 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
-import { ToastModule } from 'primeng/toast';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { PopupModelComponent } from './components/popup-model/popup-model.component';
+import { DropdownstyleComponent } from './test/dropdownstyle/dropdownstyle.component';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { PopupModelComponent } from './components/popup-model/popup-model.compon
     TodoitemsComponent,
     TodolistsComponent,
     PopupModelComponent,
+    DropdownstyleComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +40,10 @@ import { PopupModelComponent } from './components/popup-model/popup-model.compon
     DynamicDialogModule,
     DialogModule,
     ConfirmPopupModule,
-    ToastModule,
     DropdownModule,
-    MultiSelectModule
+    MultiSelectModule,
+    ButtonModule,
+    ToastModule
 
   ],
   providers: [],

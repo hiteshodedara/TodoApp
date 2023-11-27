@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../models/todo';
 import { Observable, of } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,7 @@ export class LocaldataService {
     this.setTodosToLocalStorage(todos);
   }
 
-  updateTodoKey(id: number, newKey: string, title: string, disc: string) {
+  updateTodoKey(id: number, newKey: string, title: string, disc: string,auser:User) {
     const todos = this.getTodosFromLocalStorage();
     const index = todos.findIndex((todo: { id: number; }) => todo.id === id);
 
@@ -44,6 +45,8 @@ export class LocaldataService {
       todos[index].key = newKey;
       todos[index].title = title
       todos[index].discription = disc
+      todos[index].assigneduser=auser
+      
       this.setTodosToLocalStorage(todos);
     }
 

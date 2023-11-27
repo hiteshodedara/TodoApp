@@ -3,11 +3,11 @@ export interface Todo {
     title: string
     discription: string
     id: number
-    assigneduser?: [{
-        userid: number;
-        username: string;
-    }]
-    todocreater: {
+    assigneduser:{
+        id: number;
+        name: string;
+    }
+    ,   todocreater: {
         uid: number;
         username: string;
         sdate: any;
