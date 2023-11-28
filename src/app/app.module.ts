@@ -19,6 +19,7 @@ import { PopupModelComponent } from './components/popup-model/popup-model.compon
 import { DropdownstyleComponent } from './test/dropdownstyle/dropdownstyle.component';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ToastModule } from 'primeng/toast';
     DropdownModule,
     MultiSelectModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    TooltipModule
 
   ],
   providers: [],

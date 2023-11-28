@@ -11,10 +11,10 @@ export class UsersService {
   constructor() { this.generateRandomUsers() }
   private generateRandomUsers(): void {
     // Manually define 10 static users
-    this.users.push({ id: 1, name: 'Hitesh' });
-    this.users.push({ id: 2, name: 'Dipen' });
-    this.users.push({ id: 3, name: 'Hardik' });
-    this.users.push({ id: 4, name: 'Sager' });
+    this.users.push({ id: 1, name: 'Odedara Hitesh' });
+    this.users.push({ id: 2, name: 'Kukadiya Dipen' });
+    this.users.push({ id: 3, name: 'Bhardva Hardik' });
+    this.users.push({ id: 4, name: 'Timba Sager' });
 
   }
 

@@ -21,15 +21,29 @@ export class TodoitemsComponent implements OnInit {
 
   ref: DynamicDialogRef | undefined;//ref data for dynamicdialog
 
-
-
+  cuser: any;//user short name
+  fulluname: any;//user full name
 
   constructor(private dbdata: LocaldataService, public dialogService: DialogService,
     private confirmationService: ConfirmationService, private messageService: MessageService) {
 
   }
 
+  //name converter
+  getInitials(userName: string): string {
+    const words = userName.split(' ');
+    const initials = words.map(word => word.charAt(0));
+
+    return initials.join('');
+  }
+
   ngOnInit() {
+
+    //creating currunt todoitem user name in short
+    this.fulluname = this.items.assigneduser.name
+    this.cuser = this.getInitials(this.fulluname)
+
+
 
 
   }
@@ -56,7 +70,7 @@ export class TodoitemsComponent implements OnInit {
       accept: async () => {
         this.messageService.add({ severity: 'success', summary: 'Todo ', detail: 'Deleted' });//toast for accept
         console.log("is ok");
-        
+
         setTimeout(() => {
           this.emitedeletedata(id)
         }, 1000);

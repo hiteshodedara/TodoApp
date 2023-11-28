@@ -1,27 +1,38 @@
-<div class="card d-flex  flex-row justify-content-between  bg-success-subtle  overflow-hidden ">
+<div class="card">
 
-  <!-- TodoItems Value is here -->
-  <div class=" text d-flex ">
-    <div class=" align-self-center  ">
-      <p class="mt-3 mx-2 fw-bold ">{{items.title}}</p>
-    </div>
-  </div>
 
-  <div class="Functions mx-1   d-flex gap-1  ">
+  <div class=" d-flex  flex-row justify-content-between  bg-success-subtle  overflow-hidden ">
 
-    <!-- Update Button Here -->
-    <div class=" align-self-center">
-      <i class="fa fa-edit fw-bolder  text-light-emphasis  mt-1   fs-4 fbtn" (click)="Updatetodo(items)"></i>
+    <!-- TodoItems Value is here -->
+    <div class=" text d-flex ">
+      <div class=" align-self-center  ">
+        <p class="mt-3 mx-2 fw-bold ">{{items.title}}</p>
+      </div>
+      
     </div>
 
-    <!-- Delete Button Here -->
-    <p-toast></p-toast>
-    <p-confirmPopup class="confirm" [style]="confirmPopupStyles"></p-confirmPopup>
-    <div class=" align-self-center">
-      <i class="fa fa-trash   text-danger fs-4 fbtn" (click)="showConfirmationDialog(items.id,$event)"></i>
-    </div>
     
-  
 
+    <div class="Functions mx-1   d-flex gap-1  ">
+
+      <div class="initials-container mx-2  align-self-center">
+        <label for="" [pTooltip]="fulluname">{{cuser}}</label>
+     </div>
+
+      <!-- Update Button Here -->
+      <div class=" align-self-center">
+        <i class="fa fa-edit fw-bolder  text-light-emphasis  mt-1   fs-4 fbtn" (click)="Updatetodo(items)"></i>
+      </div>
+
+      <!-- Delete Button Here -->
+      <p-toast></p-toast>
+      <p-confirmPopup class="confirm" [style]="confirmPopupStyles"></p-confirmPopup>
+      <div class=" align-self-center">
+        <i class="fa fa-trash   text-danger fs-4 fbtn" (click)="showConfirmationDialog(items.id,$event)"></i>
+      </div>
+
+
+
+    </div>
   </div>
 </div>
