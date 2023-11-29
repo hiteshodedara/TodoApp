@@ -24,8 +24,8 @@ export class TodoitemsComponent implements OnInit {
   cuser: any;//user short name
   fulluname: any;//user full name
 
-  constructor(private dbdata: LocaldataService, public dialogService: DialogService,
-    private confirmationService: ConfirmationService, private messageService: MessageService) {
+  constructor( private messageService: MessageService,private dbdata: LocaldataService, public dialogService: DialogService,
+    private confirmationService: ConfirmationService) {
 
   }
 
@@ -67,9 +67,8 @@ export class TodoitemsComponent implements OnInit {
       rejectLabel: 'No',
       acceptButtonStyleClass: 'p-button-success', // the custom class for the accept button
       rejectButtonStyleClass: 'p-button-danger', // the custom class for the reject button
-      accept: async () => {
+      accept: () => {
         this.messageService.add({ severity: 'success', summary: 'Todo ', detail: 'Deleted' });//toast for accept
-        console.log("is ok");
 
         setTimeout(() => {
           this.emitedeletedata(id)
@@ -77,13 +76,12 @@ export class TodoitemsComponent implements OnInit {
       },
       reject: () => {
         this.messageService.add({ severity: 'error', summary: 'Todo ', detail: 'Not Deleted' });//toast for reject
-        console.log("is no");
       },
 
     });
 
   }
-
+  //for delete todo
   emitedeletedata(id: number) {
     this.tododelete.emit(id)
   }

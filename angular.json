@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-        "style": "scss"
+        "style": "sass"
       }},
       "root": "",
       "sourceRoot": "src",
@@ -33,7 +33,7 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "src/styles.scss"
+              "src/styles.sass"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"

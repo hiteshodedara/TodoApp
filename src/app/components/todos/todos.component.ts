@@ -14,6 +14,7 @@ export class TodosComponent implements OnInit {
 
   blocks!: any[];//variable for set ui element in display
 
+
   constructor(private uiService: UIdataService, private dbdata: LocaldataService) {
 
     //get data from service to show ui
@@ -26,7 +27,6 @@ export class TodosComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
 
 

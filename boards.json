@@ -1,0 +1,13 @@
+{
+    "boards":[
+        {
+            "boardId": 1,
+            "boardTitle":"Testing",
+            "owner": {
+                "userid":1,
+                "username":"Odedara Hitesh"
+            },
+            "boardDescription":""
+        }
+    ]
+}

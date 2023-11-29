@@ -1,12 +1,3 @@
 
-<div>
-    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry"
-     optionLabel="name" [showClear]="true" placeholder="Select a Country">
-        
-        <ng-template let-country pTemplate="item">
-            <div class="flex align-items-center gap-2">
-                <div>{{ country.name }}</div>
-            </div>
-        </ng-template>
-    </p-dropdown>
-</div>
+<p-toast></p-toast>
+<button type="button" pButton pRipple (click)="show()" label="Show" class="p-button-success"></button>

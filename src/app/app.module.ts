@@ -20,6 +20,15 @@ import { DropdownstyleComponent } from './test/dropdownstyle/dropdownstyle.compo
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
+import { SidebarModule } from 'primeng/sidebar';
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import { AuthorizedViewComponent } from './layouts/authorized-view/authorized-view.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { MenuModule } from 'primeng/menu';
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { BoardMenuBarComponent } from './components/board-menu-bar/board-menu-bar.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +38,10 @@ import { TooltipModule } from 'primeng/tooltip';
     TodolistsComponent,
     PopupModelComponent,
     DropdownstyleComponent,
+    MenuBarComponent,
+    AuthorizedViewComponent,
+    SideBarComponent,
+    BoardMenuBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +58,12 @@ import { TooltipModule } from 'primeng/tooltip';
     MultiSelectModule,
     ButtonModule,
     ToastModule,
-    TooltipModule
+    TooltipModule,
+    SidebarModule,
+    MenubarModule,
+    InputTextModule,
+    MenuModule,
+    TieredMenuModule
 
   ],
   providers: [],

@@ -1,27 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-dropdownstyle',
   templateUrl: './dropdownstyle.component.html',
-  styleUrls: ['./dropdownstyle.component.scss']
+  styleUrls: ['./dropdownstyle.component.scss'],
+  providers:[MessageService]
 })
 export class DropdownstyleComponent implements OnInit {
-  countries: any[] | undefined;
+  constructor(private messageService: MessageService) {}
 
-  selectedCountry: string | undefined;
+    show() {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+    }
 
-  ngOnInit() {
-      this.countries = [
-          { name: 'Australia', code: 'AU' },
-          { name: 'Brazil', code: 'BR' },
-          { name: 'China', code: 'CN' },
-          { name: 'Egypt', code: 'EG' },
-          { name: 'France', code: 'FR' },
-          { name: 'Germany', code: 'DE' },
-          { name: 'India', code: 'IN' },
-          { name: 'Japan', code: 'JP' },
-          { name: 'Spain', code: 'ES' },
-          { name: 'United States', code: 'US' }
-      ];
-  }
+    ngOnInit(): void {
+        
+    }
 }

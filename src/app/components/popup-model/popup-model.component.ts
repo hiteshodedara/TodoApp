@@ -10,7 +10,7 @@ import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-popup-model',
   templateUrl: './popup-model.component.html',
-  styleUrls: ['./popup-model.component.scss']
+  styleUrls: ['./popup-model.component.sass']
 })
 export class PopupModelComponent implements OnInit {
 
