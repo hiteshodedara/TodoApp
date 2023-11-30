@@ -1,30 +1,49 @@
-:host ::ng-deep
-    .sidebarwrapper
-        .p-menu
-            width: 100%
-            height: 100%
-            background-color: #577755
-            border: none
+$HoverColor:#3a277db6
+    
+    
+:host
+    .sidebar
+        background-color: #fff
 
-        .p-menuitem
-            margin-left: 15px   
-            &:hover
-                background-color: #574
+    .menu
+        list-style: none
+        display: flex
+        flex-direction: column
+        padding: 0
+    .menuitem
+        padding: 10px
+        &:hover
+            background-color: $HoverColor
 
-        .p-menu-list
-            padding-left: 0
-        
-        .p-menuitem-link
-            text-decoration: none
+    .textlable
+        font-size: 19px
+        font-weight: 700
+        margin-left: 10px
 
-        .p-submenu-header
-            background-color: #577755
-            font-size: 20px
-            color: #000
+    .boardaddtitle
+        display: flex
+        align-items: center
 
+    .addboardclass
+        margin-right: 10px
+        padding: 5px
+        &:hover
+            background-color: $HoverColor
 
-        .p-menuitem-text
-            color: rgba(23,23 ,12 ,23 )
-        
-        .p-menuitem-icon
-            color: rgba(23,23 ,12 ,23 )
+    .addbutton
+        &:hover
+            cursor: pointer
+
+    .downmenu
+        list-style: none
+        padding: 0
+        margin-bottom: 0
+
+    .downmenuitem
+
+        padding: 10px
+        &:hover
+            background-color: $HoverColor
+
+    .downitem
+        margin-left: 10px

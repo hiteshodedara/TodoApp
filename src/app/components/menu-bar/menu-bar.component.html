@@ -4,11 +4,11 @@
         <img src="https://primefaces.org/cdn/primeng/images/primeng.svg" height="30" class="" />
     </ng-template>
     <ng-template pTemplate="end">
-        <input type="text" pInputText placeholder="Search" />
-        <div class="CurruntUser mx-2  align-self-center d-flex " (click)="menu.toggle($event)">
-            <div class="usermenuwrapper" >
-                <p-tieredMenu #menu [model]="user_menu" [popup]="true"></p-tieredMenu>
-                <label>HO</label>
+        <input type="text" class="form-control  " pInputText placeholder="Search" />
+        <div class="usermenuwrapper d-flex align-items-center " >
+            <p-tieredMenu #menu [model]="user_menu" [popup]="true"></p-tieredMenu>
+            <div class="CurruntUser mx-2  align-self-center d-flex " (click)="menu.toggle($event)">
+                <label >HO</label>
             </div>
         </div>
     </ng-template>

@@ -16,7 +16,6 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { PopupModelComponent } from './components/popup-model/popup-model.component';
-import { DropdownstyleComponent } from './test/dropdownstyle/dropdownstyle.component';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
@@ -37,7 +36,6 @@ import { BoardMenuBarComponent } from './components/board-menu-bar/board-menu-ba
     TodoitemsComponent,
     TodolistsComponent,
     PopupModelComponent,
-    DropdownstyleComponent,
     MenuBarComponent,
     AuthorizedViewComponent,
     SideBarComponent,

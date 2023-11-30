@@ -4,12 +4,12 @@
             <app-menu-bar></app-menu-bar>
         </div>
     </div>
-    <div class="row mainbody">
+    <div class="row mainbody ">
         <div class="col sidebar" *ngIf="issidebar">
-            <app-side-bar></app-side-bar>
+            <app-side-bar (cuuruntboard)="curruntboardassign($event)"></app-side-bar>
         </div>
         <div class="col closebutton ">
-            <i [class]="issidebar"  [class]="issidebar ? 'pi pi-arrow-left':'pi pi-arrow-right' " [pTooltip]="issidebar ? 'Close Sidebar':'Open Sidebar'" (click)="onsidebartoggle()"></i>
+            <i [class]="issidebar"  [class]="issidebar ? 'pi pi-arrow-left':'pi pi-arrow-right' " [pTooltip]="issidebar ? 'Close Sidebar':'Open Side'" (click)="onsidebartoggle()"></i>
         </div>
         <div class="col">
             <app-todos></app-todos>

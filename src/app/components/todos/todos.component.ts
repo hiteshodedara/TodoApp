@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BoardsService } from 'src/app/services/boards.service';
 import { LocaldataService } from 'src/app/services/localdata.service';
 import { UIdataService } from 'src/app/services/uidata.service';
 
@@ -14,9 +16,13 @@ export class TodosComponent implements OnInit {
 
   blocks!: any[];//variable for set ui element in display
 
+  boardid:any;
+  curruntboard:any;
 
-  constructor(private uiService: UIdataService, private dbdata: LocaldataService) {
 
+  constructor(private activetedrout:ActivatedRoute,private uiService:UIdataService,private boardservice:BoardsService) {
+
+    
     //get data from service to show ui
     uiService.TodoListUI().subscribe((data) => {
       data.sort((a, b) => a.index - b.index)
@@ -26,6 +32,19 @@ export class TodosComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    this.boardid=this.activetedrout.snapshot.paramMap.get('id')
+    if(this.boardid){
+
+      this.boardservice.getoneboard(this.boardid).subscribe(res=>{
+        setTimeout(() => {
+          console.log(res);
+          
+        }, 10000);
+        
+      })
+    }
+    
   }
 
 

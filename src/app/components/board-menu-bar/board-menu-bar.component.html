@@ -1,7 +1,18 @@
 <div class="boardmenuwrapper">
-    <p-menubar [model]="board_menu_item" class="">
-        <ng-template pTemplate="start" class="align-self-auto ">
-            <label class="boardtitle">Todos Project</label>
+    <p-menubar class="">
+        <ng-template pTemplate="start" class="">
+            <div class="boardtitle">
+                <label>Todos Project</label>
+            </div>
+
+            <div class="Favorite">
+                <i [class]="isfavorite?'pi pi-star':'pi pi-star-fill'" (click)="onclickfavorite()"></i>
+            </div>
+
+            <div class="WorkSpace">
+                <label class="m-1 "><i class="pi pi-fw pi-user"></i> Workspace</label>
+            </div>
+
         </ng-template>
         <ng-template pTemplate="end">
             <div class="boardmembers mx-2  align-self-center d-flex ">
